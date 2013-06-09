@@ -1,0 +1,99 @@
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 3.
+
+\mode<presentation>
+
+\newif\ifbeamer@secheader
+\beamer@secheaderfalse
+
+\DeclareOptionBeamer{secheader}{\beamer@secheadertrue}
+\ProcessOptionsBeamer
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Outer Theme%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mode<presentation>
+
+
+
+% footer styling
+\setbeamercolor{section in footer}{fg=white,bg=spohoblue}
+\setbeamercolor{subsection in footer}{fg=white,bg=spohoblue}
+\setbeamercolor{pagenumber in footer}{fg=white,bg=spohoblue}
+
+
+
+\defbeamertemplate*{footline}{dshsbeamertheme}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333\paperwidth,ht=2.25ex,dp=1ex,left]{section in footer}%
+    \hspace*{2ex} \insertshortauthor%von \inserttitle zu insertauthor
+  \end{beamercolorbox}%
+ \begin{beamercolorbox}[wd=.333\paperwidth,ht=2.25ex,dp=1ex,center]{subsection in footer}%
+   \insertshorttitle % to include sectionname use \insertsectionhead
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.334\paperwidth,ht=2.25ex,dp=1ex,right]{pagenumber in footer}%
+   \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+
+
+\setbeamersize{text margin left=1em,text margin right=1em}
+
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections unnumbered]
+
+
+\mode
+<all>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% End Outer Theme%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+% color definitions
+
+\definecolor{spohoblue}{RGB}{0, 83, 146}
+
+% set the title color
+\setbeamercolor{title}{bg=spohoblue, fg=white}
+
+
+% set colors for specific elements
+
+\setbeamercolor{block}{fg=spohoblue}
+\setbeamercolor{block title}{fg=spohoblue} % adjust title color to poppy
+\setbeamercolor{block item}{fg=spohoblue}
+\setbeamercolor{itemize item}{fg=spohoblue} % adjusts the bullet color
+\setbeamercolor{structure}{fg=spohoblue}% adjust the enumerate item color
+\setbeamercolor{frametitle}{bg=spohoblue, fg=white}
+
+% frame title styling
+%\setbeamertemplate{frametitle}{\vspace{0.4cm}\color{bg=spohoblue} \textbf{\insertframetitle} \par \vskip -.8em \hrulefill} 
+
+
+
+\usesubitemizeitemtemplate{%
+    \tiny\raise1.5pt\hbox{\color{beamerstructure}$\blacktriangleright$}%
+}
+\usesubsubitemizeitemtemplate{%
+    \tiny\raise1.5pt\hbox{\color{beamerstructure}$\bigstar$}%
+}
+
+
+\setbeamersize{text margin left=1em,text margin right=1em}
+\setbeamersize{frametitle=\huge}
+
+\ifbeamer@secheader\else\setbeamertemplate{headline}[default]\fi
+
+\mode
+<all>
