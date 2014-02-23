@@ -1,0 +1,6 @@
+dshsbeamer
+==================
+An inofficial LaTeX beamer template for the German Sport Universit Cologne.
+```{r}
+sessionInfo()
+```
